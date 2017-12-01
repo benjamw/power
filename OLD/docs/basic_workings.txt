@@ -1,0 +1,11 @@
+Basic Game Workings
+
+1- Get all commands from all players
+2- Move all pieces according to commands
+3- Resolve conflicts, move pieces as necessary, add captures to reserve
+4- Repeat step 3 as necessary (BOUNCE)
+5- Resolve any flag captures, add captures to reserves (email losers)
+6- Begin new turn (email remaining players for next turn)
+
+Other basic workings
+- Delete games after 30-45 days of inactivity

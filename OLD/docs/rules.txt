@@ -1,0 +1,335 @@
+
+
+---- POWER ----
+
+
+
+-- Object
+To eliminate your opponents by occupying their home base and having
+your infantry (either single soldiers or regiments) capture their flag.
+
+-- Game Board
+The game board shows four countries, each divided into nine sectors.
+Each country also has a head quarters sector (Q) and a RESERVE (located
+off the board, behind home-base) (U). Five islands lie between the
+countries. Sea lanes border the countries and islands.
+
+-- Pieces
+Power Units (Lightning Bolts)
+Flag
+Megamissle
+Destroyers (small ships)
+Cruisers (large ships)
+Fighters (small planes)
+Bombers (large planes)
+Tanks (small tanks)
+Heavy Tanks {Heavy or Heavies} (large tanks)
+Infantry (small soldiers)
+Regiments (large soldiers)
+
+-- Movement and Power
+PIECE (S) - POWER - PIECE (L) - POWER - MOVES (same for both)
+Infantry  - 2     - Regiment  - 20    - 2
+Tank      - 3     - Heavy     - 30    - 3
+Fighter   - 5     - Bomber    - 25    - 5
+Destroyer - 10    - Cruiser   - 50    - 1
+Megamissle- * (once to anywhere)
+
+
+
+-- PLAY --
+
+-- Starting Up
+Select your home base and color (YQ, KQ, AQ, RQ)
+The following pieces will be placed in your HQ:
+1 Flag
+2 Infantry
+2 Tanks
+2 Fighters
+2 Destroyers
+
+-- COMMANDS: Moving and Exchanging
+During a round, you are allowed up to five separate commands. These
+commands fall into two categories: moving and exchanging. Moving means
+moving a playing piece from one sector to another. Exchanging means
+turning in playing pieces or Power Units for new playing pieces.
+
+-- Moving Infantry and Regiments.
+Infantry and Regiments (soldiers) can only move two sectors (or less)
+in the same round and only through sectors containing land. Infantry
+travel from one country to another by stopping on island sectors (N, S,
+W, E, X) that lie between countries. When Infantry enter an island or a
+home base, they cannot move any farther during that round, even if they
+have a movement count remaining. They must wait until the next round to
+move again.
+
+-- Moving Tanks and Heavy Tanks.
+Tanks can move three sectors (or less) in the same round. Like
+Infantry, they can only travel through sectors containing land, and
+they must stop on islands to get from one country to another. Also like
+Infantry, Tanks cannot enter and exit an island or home base in the
+same round, even if they have movement counts remaining. They must wait
+until the next round to move on.
+
+-- Moving Fighters and Bombers.
+Fighters and Bombers can move five sectors (or less) in the same round,
+but they cannot fly over sea lanes (L01 through L12). Planes cannot
+enter and leave a headquarters sector in the same round, but they can
+pass over island sectors without stopping.
+
+-- Moving Destroyers and Cruisers.
+Destroyers and Cruisers have a movement allowance of one, and they are
+restricted to sectors containing water. They can sail into a country's
+beach sectors, home-bases, and island sectors, but they cannot travel
+diagonally across countries.
+
+-- Moving Megamissiles.
+A Megamissile can only be used once, but it can be sent into any sector
+you want, including a home-base or RESERVE sector. It can even be
+directed to the same sector it was launched from.
+
+-- Exchanging Power Units for small playing pieces.
+Power Units are used to "buy" additional small playing pieces. The
+"cost" of a piece is the same as its power value; you can exchange two
+Power Units for a new Infantry, ten Power Units for a new Destroyer,
+etc.
+
+-- Exchanging three small playing pieces for one large piece.
+When you have collected three small playing pieces of the same type in
+the same sector, you may exchange them for a large piece of the same
+type. The large piece is placed in the same sector the small pieces
+were in. You can only exchange small playing pieces for the same type
+of large playing piece (Fighters for a Bomber, Destroyers for a
+Cruiser, etc.), except the Megamissile.
+
+-- Exchanging for a Megamissile.
+Megamissiles can be exchanged for a combination of existing playing
+pieces and Power Units. For example, you can exchange a Cruiser (power
+value = 50), a Heavy Tank (power value = 30), a Destroyer (power value
+= 10), and 10 Power Units for a Megamissile. The Megamissile is placed
+in the sector where all the pieces were. No "change" is given when you
+exchange for a Megamissile; power value overages are lost.
+
+
+-- Rules to follow when planning your commands:
+
+* You may have more than one of your pieces occupying the same sector.
+
+* You may move in any direction you want, including diagonally.
+
+* Pieces in RESERVE can only move to the HQ sector. Pieces may never
+move back into RESERVE.
+
+* Pieces cannot be moved more than once in a round. For example, you
+cannot move a ship from N to L04 and then from L04 to X in the same
+round.
+
+* Pieces can be moved and then exchanged in the same round (which
+counts as two commands). For example, you can move a Fighter into a
+sector that already has two other Fighters in it and then exchange them
+for a Bomber. (You cannot move the Bomber, however, until the next
+round.)
+
+* Pieces may be exchanged more than once in a round. For example, you
+may exchange two Power Units in RESERVE for an Infantry. You may now
+exchange the new Infantry, along with the two other Infantry pieces you
+have in RESERVE, for a Regiment.
+
+* Pieces cannot move in the same round after they have been exchanged.
+There are two exceptions : pieces can be exchanged in RESERVE and then
+moved into home base (two commands), and Megamissiles can be exchanged
+and then launched in the same round (also two commands).
+
+
+-- MOVING --
+
+When you're writing your commands, you must use the following notations
+for the pieces:
+I - Infantry
+T - Tank
+F - Fighter
+D - Destroyer
+G - Regiment
+H - Heavy Tank (Heavy)
+B - Bomber
+C - Cruiser
+P - Power Unit (Power or Point)
+M - Megamissile (Mega)
+
+
+-- MOVES
+(see game_codes.txt)
+
+You are required to issue at least one command In each round. If you
+fail to move (or exchange), you must give up one Power Unit. If you
+don't have a Power Unit, you must exchange the playing piece with the
+lowest power value (from anywhere on the board) for its equivalent in
+Power Units (or, in the case where your lowest piece is large, you
+exchange it for two smaller pieces plus Power Units). The extra Power
+Units (and small pieces, if any) are placed in your RESERVE, not back
+in the sector they came from.
+
+
+-- Implementing Your Commands
+The next stage is carried out in the following order:
+1. Move and Exchange Pieces.
+Illegal commands are cancelled. For example, if you mistakenly planned
+to move a Tank from Q to X (a four-sector move), the Tank would stay in
+Q and you would "lose" that command.
+
+2. Resolve Conflicts.
+Conflict is resolved only after all commands have been completed. When
+a sector is occupied by more than one player, the power values of the
+pieces in the conflicted sector are calculated. The player with the
+highest total power value wins the sector and captures all the opposing
+pieces (even if two other players, with lesser power values, are tied).
+
+
+Rules for resolving ties: (BOUNCE)
+
+* Pieces belonging to the tied players must retreat to the sectors they
+came from.
+
+* Pieces that were already in the tied sector at the beginning of the
+round do not retreat; they stay in the tied sector.
+
+* Pieces that were traded in the sector from pieces that were not 
+originally in the sector are traded back into the original pieces and 
+the original pieces must retreat to the sectors they came from.
+
+* If a piece retreats to a sector that is occupied by another player,
+this conflict is resolved following ordinary conflict resolution rules.
+
+* Pieces only retreat once in a round; if a new tie exists in the
+sector your piece retreats to, only your opponent retreats.
+
+* If there are three players in a conflicted sector and if the two
+players with the highest power values are tied, the tied players
+retreat and the remaining player's pieces stay in the sector.
+
+* If there are four players in a sector and the two players with the
+highest power values are tied, they retreat and the two remaining
+players battle it out. (If they are tied, they retreat as well.)
+
+* You may attack and occupy your opponent's home base, but you cannot
+capture the flag unless you have an Infantry or Regiment piece among
+your forces.
+
+
+Rules for resolving conflicts with Megamissiles:
+
+* A Megamissile's power value only counts in battle when it is
+launched. A Megamissile has no defensive power, so if one is sitting in
+a sector by itself, for example, any opposing piece can conquer it. If
+you have a Megamissile sitting in a sector with your Bomber and if the
+sector is attacked by a Cruiser, the Cruiser wins the sector and
+captures both your Bomber and your Megamissile.
+
+* Captured Megamissiles go into your RESERVE (and can be launched only
+from there).
+
+* Megamissiles cannot be moved (unless captured); they can only be
+launched.
+
+* When a Megamissile is launched into a sector, all forces in the
+sector are completely destroyed, including any of your own forces.
+Since only debris remains, all pieces that were in the sector
+(including the Megamissile) are removed from the board and the sector
+is unoccupied. If the sector is a home base, the flag remains standing
+in the sector and is not captured.
+
+* If opposing Megamissile are launched into the same sector, they are
+all destroyed -- along with all other forces in the sector -- and the
+sector is then unoccupied.
+
+
+ALL Captured pieces go into your RESERVE. They are now part of your
+armed forces.  They will take on your color when captured.
+
+3. Distribute Power Units.
+You get one Power Unit for each opponent's country (0-8) you occupy,
+regardless of how many sectors you occupy in the country or how many
+pieces you have. The maximum number of Power Units you can get in a
+round is three. You may not receive a Power Unit for a country without
+a flag; an island; a sea lane; or your own country. Power Units are
+placed in your RESERVE, where they stay until they are exchanged.
+
+4. Resolve Captured Flags.
+After all other conflicts are resolved and all Power Units are
+distributed, then and only then, will one of your soldiers capture your
+opponent's flag. When that happens, you take possession of all the
+conquered player's remaining pieces and Power Units, including anything
+won during this round, and the conquered player is now out of the game.
+All captured pieces are placed in your RESERVE.
+
+5. Simultaneous Flag Captures.
+If two or more opposing players capture each other's flags in the same
+turn (i.e. Red captures Black and Black captures Red), the pieces for
+all the players involved in the simultaneous flag capture are removed
+from the board.  If there are no remaining players after this occurs,
+the game ends in a draw.
+
+
+-- WINNING THE GAME --
+
+You win Power when you have conquered the world by capturing the
+flag of your last remaining opponent. REMEMBER: There must be an
+Infantry or Regiment piece among the pieces that capture the flag.
+
+
+-- TWO-PLAYER GAME --
+
+When two people are playing, each person plays two countries (and two
+sets of pieces) which are next to each other on the board. You win when
+you capture both your opponent's flags.
+
+Special rules you should follow in the two-player game:
+
+* You have ten commands for each round: five for each color.
+
+* You may combine your colors to capture a sector, since you count the
+total of both colors when determining the winner. Both forces of the
+winning player remain in the sector.
+
+* Captured pieces go into the armed forces of the color that won the
+conflict. You may not switch pieces between the two colors you are
+playing.
+
+* If you have an equal force of both colors in a sector that you have
+captured from your opponents, you may choose which color gets the
+conquered pieces. You may not split the conquered pieces between the
+two colors.
+
+
+-- THREE-PLAYER GAME --
+
+In a three-player game, the fourth country is considered "mercenary".
+The mercenary force is directed by the three active players. Here are
+the rules to follow:
+
+* Any of the three players can move mercenary pieces. If two or three
+players try to move the same piece, the moves cancel each other out and
+the piece stays where it is.
+
+* You may devote as many of your five commands to moving and exchanging
+mercenary pieces as you want.
+
+* You may deliberately move a mercenary piece so that your forces can
+capture it.
+
+* If all the mercenary's pieces have been captured but its flag is
+still standing, each player occupying a sector of the mercenary country
+will get a Power Unit.
+
+* When you capture mercenary pieces, they are added to your forces,
+following the same procedure used when you capture any enemy piece.
+
+* When a mercenary captures pieces they are added to its RESERVE, along
+with any Power Units won.
+
+* When you capture the mercenary flag, the mercenary country is out of
+play, and you take possession of all the mercenary's remaining pieces
+and Power Units.
+
+
+-- END --

@@ -1,0 +1,60 @@
+FAQs
+
+PLEASE READ THE RULES BEFORE THE FAQS
+THIS FAQ IS STRICTLY WEB RELATED
+
+ALSO READ GAME_CODES TO FAMILIARIZE YOURSELF
+WITH THE VARIOUS CODES USED DURING THE GAME
+
+
+Q- How do I make a move?
+A- You make a move by entering your various commands into the five command boxes for each color you control.  Commands can be either move commands or trade commands.
+
+
+Q- How do I enter a move command?
+A- You enter a move command by typing the code for the piece, then a dash, then the code for the sector you are moving from, then another dash, then the code for the sector you are moving to.  Spaces are allowed, but will be removed upon submittal.
+
+Examples:
+I-Y4-X   = Infantry from Yellow 4 to Island X
+H-A6-A0  = Heavy from White 6 to White 0
+D-S12-W  = Destroyer from Sea Lane 12 to Island W
+B-RQ-A0  = Bomber from Red Headquarters to White 0
+G-AU-WQ  = Regiment from White Reserve to White HQ
+
+For two or three player games with more than one color, prepend initial
+piece code with the color code
+Examples:
+RI-Y4-X   = Red Infantry from Yellow 4 to Island X
+KH-A6-A0  = Black Heavy from White 6 to White 0
+YD-S12-W  = Yellow Destroyer from Sea Lane 12 to Island W
+AB-RQ-A0  = White Bomber from Red Headquarters to White 0
+KG-AU-WQ  = Black Regiment from White Reserve to White HQ
+
+
+Q- How do I enter a trade command?
+A- You enter a trade command by typing the number of pieces you wish to trade (usually three for normal trades), then the code for the piece, (if more than one type of piece is being traded for a Megamissle, separate the various pieces with a comma) then the code for the sector the pieces are in, then another dash and a greater than sign ( > ) to create an arrow ( -> ), and then the code for the piece you wish to trade to.
+
+Examples:
+3T-K2->H   = 3 Tanks on Black 2 exchanged for 1 Heavy
+3I-N->G    = 3 Infantry on Island N exchanged for 1 Regiment
+3P-AU->T   = 3 Power Units on White Reserve exchanged for 1 Tank
+C,2B-W->M  = 1 Cruiser AND 2 Bombers on Island W exchanged for a
+             Megamissle
+Z-Y2->M    = As much as needed on Yellow 2 exchanged for a Megamissle
+             (NOTE: Z code only works for Megamissle exchanges)
+
+For two or three player games with more than one color, prepend initial
+piece code with the color code
+Examples:
+3AT-K2->H    = 3 White Tanks on Black 2 exchanged for 1 Heavy
+3KI-N->G     = 3 Black Infantry on Island N exchanged for 1 Regiment
+3RP-AU->T    = 3 Red Power Units on White Reserve exchanged for 1 Tank
+AC,2AB-W->M  = 1 White Cruiser and 2 White Bombers on Island W
+               exchanged for a Megamissle
+YZ-Y2->M     = As much Yellow as needed on Yellow 2 exchanged for a
+               Megamissle
+
+
+Q- How do I save my commands?
+A- After you input your commands, hit the 'Test' button to test your commands for errors and save your valid commands to the database.  You can then make changes to your invalid commands and hit 'Test' again.  You may do this as many times as you wish.  When you are satisfied with your commands, press the 'Execute' button to permanently save your commands.
+You can 'Test' your commands, and leave the game and come back at a later time to add, remove, or change any of your commands, but once you press 'Execute' you can not edit any of your commands.  But remember, the game will not continue until ALL players have executed their commands.

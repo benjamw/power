@@ -1,0 +1,172 @@
+
+These are the codes used throughout the game
+whether in move notation, game functions, or
+anywhere else.  This is the definitive list
+of piece, sector, color, and move code notation.
+
+LETTERS REMAINING FOR USE
+(Used code shown)
+A - white (all the letters in W-H-I-T-E are taken)
+B - Bomber
+C - Cruiser
+D - Destroyer
+E - East island
+F - Fighter
+G - reGiment
+H - Heavy tank (Heavy)
+I - Infantry
+J - Joined - accepted game invite - stored in DB as color code
+K - blacK
+L - sea Lane
+M - Megamissle (Mega)
+N - North island
+O - Open invite - invited to game - stored in DB as color code
+P - Power unit (Power)
+Q - head Quarters
+R - Red
+S - South island
+T - Tank
+U - reserve
+V - flag (Victory)
+W - West island
+X - crossroads (X, center) island
+Y - Yellow
+Z - use all available points for trade (megamissle only)
+    (also used to denote the game data in the database)
+
+
+CODES FOR PIECES
+I - Infantry
+G - Regiment
+T - Tank
+H - Heavy Tank (Heavy)
+F - Fighter
+B - Bomber
+D - Destroyer
+C - Cruiser
+M - Megamissle (Mega)
+P - Power Unit (Point)
+V - Flag (Victory) (database and class only, not movable)
+
+CODES FOR SECTORS
+This graphic shows the basic layout of the board
+Each color gets a quadrant. Q is Headquarters.
+U is reserve (not on board, but on screen).
+Islands and all Sea Lanes are neutral.
+
+U                     |                     U
+  Y                   |                   K
+    +---+-----------+---+-----------+---+
+    | Q |   L 0 6   | N |   L 0 7   | Q |
+    +---/---+---+---\---/---+---+---\---+
+    |   | 8 | 6 | 3 |   | 5 | 7 | 8 |   |
+    | L +---+---+---+ L |---+---+---+ L |
+    | 0 | 7 | 4 | 1 | 0 | 2 | 4 | 6 | 0 |
+    | 5 +---+---+---+ 1 |---+---+---+ 8 |
+    |   | 5 | 2 | 0 |   | 0 | 1 | 3 |   |
+    +---\---+---+---/---\---+---+---/---+
+----| W |   L 0 4   | X |   L 0 2   | E |----
+    +---/---+---+---\---/---+---+---\---+
+    |   | 3 | 1 | 0 |   | 0 | 2 | 5 |   |
+    | L +---+---+---+ L |---+---+---+ L |
+    | 1 | 6 | 4 | 2 | 0 | 1 | 4 | 7 | 0 |
+    | 2 +---+---+---+ 3 |---+---+---+ 9 |
+    |   | 8 | 7 | 5 |   | 3 | 6 | 8 |   |
+    +---\---+---+---/---\---+---+---/---+
+    | Q |   L 1 1   | S |   L 1 0   | Q |
+    +---+-----------+---+-----------+---+
+  R                   |                   A
+U                     |                     U
+
+Colors
+Y - Yellow
+K - Black
+R - Red
+A - White
+
+Islands
+N - between Y and K
+W - between Y and R
+E - between K and A
+S - between R and A
+X - center of board
+
+Sea lanes
+Counted clockwise from inside to outside starting with the northern
+most sea lane. (see above)  No sea lane is adjacent to any other sea
+lane, movement between sea lanes must pass through a non-sea lane
+sector. (Colors indicate the head quarters for that color)
+L01 - between X and N
+L02 - between X and E
+L03 - between X and S
+L04 - between X and W
+L05 - between W and Y
+L06 - between Y and N
+L07 - between N and K
+L08 - between K and E
+L09 - between E and A
+L10 - between A and S
+L11 - between S and R
+L12 - between R and W
+
+Country Sectors
+Each country owns a Headquarters (where the flag is kept) and a nine
+sector land mass (0-8) with 0 being next to X and 8 next to your own Q
+Each sector is denoted in the game be prepending the color code to the
+sector number, for instance, sector 5 on yellow side: Y5, sector 2 on
+white side: W2, etc.
+The Headquarters is denoted similarly: YQ, KQ, etc.
+All sectors in each country are both sea and land sectors, only one
+sector in each country is strictly a land sector and that is sector 4.
+
+Reserves
+Reserves are denoted with a U after the color code (like Q and 0-8)
+YU, KU, RU, AU
+Behind the HQ
+
+
+MOVES
+Moves are written by denoting the piece, the starting sector, and the
+ending sector, in that order, separated by a dash. No spaces.
+
+Examples:
+I-Y4-X   = Infantry from Yellow 4 to Island X
+H-A6-A0  = Heavy from White 6 to White 0
+D-S12-W  = Destroyer from Sea Lane 12 to Island W
+B-RQ-A0  = Bomber from Red Headquarters to White 0
+G-AU-WQ  = Regiment from White Reserve to White HQ
+
+For two or three player games with more than one color, prepend piece
+code with color code
+Examples:
+RI-Y4-X   = Red Infantry from Yellow 4 to Island X
+KH-A6-A0  = Black Heavy from White 6 to White 0
+YD-S12-W  = Yellow Destroyer from Sea Lane 12 to Island W
+AB-RQ-A0 = White Bomber from Red Headquarters to White 0
+KG-AU-WQ = Black Regiment from White Reserve to White HQ
+
+Color codes will be added to commands upon submittal of those commands
+
+
+EXCHANGES
+
+Exchanges are denoted by the number of pieces and which piece, the
+sector the exchange is on, and the new piece prepended with >, in that
+order, separated by a dash. No spaces.
+
+Examples:
+3T-K2->H = 3 Tanks on Black 2 exchanged for 1 Heavy
+3I-N->G  = 3 Infantry on Island N exchanged for 1 Regiment
+3P-AU->T = 3 Power Units on White Reserve exchanged for 1 Tank
+Z-Y2->M  = As much as needed on Yellow 2 exchanged for 1 Megamissle
+(NOTE: Z code only works for Megamissle exchanges)
+
+For two or three player games with more than one color, prepend piece
+code with color code
+Examples:
+3RT-K2->RH = 3 Red Tanks on Black 2 exchanged for 1 Red Heavy
+3KI-N->KG  = 3 Black Infantry on Island N exchanged for 1 Black Regiment
+3AP-AU->AT = 3 White Power Units on White Reserve exchanged for 1 White Tank
+YZ-Y2->YM  = As much Yellow as needed on Yellow 2 exchanged for 1 Yellow
+Megamissle
+

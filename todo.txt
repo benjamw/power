@@ -1,0 +1,30 @@
+
+ - store initial board in create function
+
+ - get create function working fully, so I can test game functions
+	and figure out database structures, and where power / game data needs to be
+
+
+
+- store bounces and captures in the gmae history table as well
+	maybe think up something for multiple bounces and multiple conflicts
+		some kind of multi-dimensional array type thing ?
+
+- have settable extra info options for things like:
+	allow blank moves
+	custom starting armies
+	allow more than max pieces (max out at given pieces, 10 power points, etc)
+	allow more than 10 power points to be stored in reserve (see above)
+	give x power points every round no matter what
+	give x power points for occupying enemy territory
+	give power point for each enemy territory occupied (instead of just one total)
+	different number of moves per turn (could be 3 or 7)
+	allow exchange and move (instead of not, as in original)
+	allow any piece to capture flag
+	custom move distance per piece
+
+- maybe do something like hide board after showing previous move and then have the player click
+	a button that shows the board for 3 minutes while they make their moves
+	once they are done, any incomplete moves are invalid and forfeit and moves are automatically
+	submitted
+		maybe have an option for this in the create game page

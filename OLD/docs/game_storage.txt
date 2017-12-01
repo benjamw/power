@@ -1,0 +1,64 @@
+piece code ideas (each sector)
+
+string ( num|color|piece , num|color|piece )
+
+possible values in the array:
+num     = (int) number of these pieces
+color   = (string) color for this piece
+piece   = (string) piece code for this piece
+player  = (int) owner for this piece
+power   = (int) point value for this piece
+moves   = (int) number of spaces that this piece can move
+moved   = (int) number of this piece that have moved this turn
+
+Array (
+  Array (
+	'num' => num ,
+	'color' => color ,
+	'piece' => piece ,
+	'player' => player
+  ) ,
+  Array (
+	'num' => num ,
+	'color' => color ,
+	'piece' => piece ,
+	'player' => player
+  )
+)
+
+Array (
+  player1 => Array (
+	Array (
+	  'num' => num ,
+	  'color' => color ,
+	  'piece' => piece
+	) ,
+	Array (
+	  'num' => num ,
+	  'color' => color ,
+	  'piece' => piece
+	)
+  ) ,
+  player2 => Array (
+	Array (
+	  'num' => num ,
+	  'color' => color ,
+	  'piece' => piece
+	) ,
+	Array (
+	  'num' => num ,
+	  'color' => color ,
+	  'piece' => piece
+	)
+  )
+)
+
+
+sector board
+YU/KU/YQ/L06/N/L07/KQ/Y8/Y6/Y3/K5/K7/K8/L05/Y7/Y4/Y1/L01/K2/K4/K6/L08/Y5/Y2/Y0/K0/K1/K3/W/L04/X/L02/E/R3/R1/R0/A0/A2/A5/L12/R6/R4/R2/L03/A1/A4/A7/L09/R8/R7/R5/A3/A6/A8/RQ/L11/S/L10/AQ/RU/AU
+
+empty board
+////////////////////////////////////////////////////////////
+
+starting board
+//2YI,2YT,2YF,2YD,YV////2KI,2KT,2KF,2KD,KV////////////////////////////////////////////////2RI,2RT,2RF,2RD,RV////2AI,2AT,2AF,2AD,AV//

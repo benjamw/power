@@ -1,0 +1,145 @@
+
+CURRENTLY WORKING ON:
+still working on getting flag captures figured
+for two or more players who capture each other at the same time
+(all are completely removed from the board)
+
+getting javascript to work for the execute command
+
+
+basic game algorithm
+---------------------------------------
+not started
+- started
+-- about half-way
+--- completed (some testing)
+---> tested and finalized (although there may be changes)
+=======================================
+
+--- get moves from user
+  ---> via manual entry
+  via javascript point and click
+--- generate movable board based on current piece position
+--- test moves for validity (in order)
+--- test moves for already moved pieces
+--- test moves for correct color (not just any color)
+--- put valid moves in database
+--- extract valid moves from database
+--- repeat as necessary until user finalizes
+- update database upon user finalization
+
+-- retrieve moves from database
+-- generate movable board based on current piece position
+- perform moves, in order, to completion
+
+--- test for conflicts
+-- resolve conflicts (who won, lost, tied)
+-- remove and add pieces from conflicts to winners reserve
+bounce ties
+-- repeat as necessary (based on bounces)
+
+-- test for flag captures
+email losers
+-- remove and add pieces from captures to winners reserve
+
+-- determine incapacitated players and mark as such
+
+LOG ALL HAPPENINGS
+
+email players of completion of turn
+
+retrieve pieces from database
+draw board
+
+generate reviewability of board (javascript or possibly php)
+
+
+
+EDIT CODES USED:
+TODO - something that needs to be done
+KLUDGE - something that needs to be achieved more efficiently
+
+________________________________________________________________________
+
+DETAILED ALGORITHM----
+
+open game
+$_GET game id
+load board----
+load saved commands----
+
+if posted commands----
+  load them from $_POST----
+  test posted commands----
+  validate posted commands----
+  save valid commands to database----
+
+if execute commands--
+  if no more moving players---
+    load all commands from database----
+    execute all commands----
+    get conflicts----
+    resolve conflicts----
+    while bounces
+      get conflicts----
+      resolve conflicts----
+
+    award occupancy points---
+
+    test for simultaneous flag captures FIRST
+      (two colors capture each other at same time)
+    resolve simultaneous flag captures (kill all)
+    LEAVE SINGLE FLAG CAPTURES
+
+    if any ambiguous conflict winnings
+      email player about it
+    else
+      test for multiple flag captures FIRST
+      resolve multiple flag captures (kill all)
+      get flag captures
+      resolve flag captures
+
+      if ambiguous flag winnings
+        email player about it
+      else
+        save board
+  else
+    save commands to database history
+
+if players fix ambiguous conflict winnings
+  if no more ambiguous conflict winnings
+    test for multiple flag captures FIRST
+    resolve multiple flag captures (kill all)
+    get flag captures
+    resolve flag captures
+
+    if ambiguous flag winnings
+      email player about it
+    else
+      save board
+
+if player fix ambiguous flag winnings
+  if no more ambiguous flag winnings
+    save board
+
+END----
+
+
+save board means:
+if game over
+  mark as such
+  email all players
+
+if dead players
+  mark as such
+  email dead players
+
+if incapacitated players
+  mark as such
+  email incapacitated players
+
+clean board
+save board to history---
+reset all player commands
+reset all living, capable players to 'Moving'
+email all living, capable players about new turn

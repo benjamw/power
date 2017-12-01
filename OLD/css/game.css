@@ -1,0 +1,140 @@
+input[type=text],
+div.text {
+	font-size: 20px;
+	text-transform: uppercase;
+	border: 2px solid #000;
+	padding: 5px;
+	margin: 1px;
+	text-align: center;
+	font-family: 'Lucida Console', monospace;
+	width: 250px;
+}
+
+form.Y input[type=text],
+div.Y div.text {
+	color: #000;
+	background: #EE0;
+}
+form.R input[type=text],
+div.R div.text {
+	color: #FFF;
+	background: #A00;
+}
+form.A input[type=text],
+div.A div.text {
+	color: #000;
+	background: #FFF;
+}
+form.K input[type=text],
+div.K div.text {
+	color: #FFF;
+	background: #000;
+	border: 3px double #FFF;
+	margin: 0;
+}
+
+#form-wrap form,
+#form-wrap .form {
+	float: left;
+	width: 49%;	
+}
+
+.clr {
+	clear: both;
+}
+
+.ok {
+	font-weight: bold;
+	color: #0A0;
+}
+
+.error {
+	font-weight: bold;
+	color: #D00;
+}
+
+
+/* * * * * * * * * * * * * * * * * * *\
+   BOARD LAYOUT STYLES
+\* * * * * * * * * * * * * * * * * * */
+
+.board {
+	border: 2px solid #000;
+	font-weight: bold;
+	width: 1280px;
+	height: 1050px;
+}
+
+.board div {
+	border: 1px solid #DDD;
+}
+
+.board .y { color: #EE0; }
+.board .k { color: #000; }
+.board .r { color: #A00; }
+.board .a { color: #AAA; }
+
+/* 1 unit = 112px */
+#YU  { float: left; width: 504px; height: 112px; }
+#KU  { float: left; width: 504px; height: 112px; }
+#YQ  { float: left; width: 112px; height: 112px; }
+#L06 { float: left; width: 336px; height: 112px; }
+#N   { float: left; width: 112px; height: 112px; }
+#L07 { float: left; width: 336px; height: 112px; }
+#KQ  { float: left; width: 112px; height: 112px; }
+#Y8  { float: left; width: 112px; height: 112px; }
+#Y6  { float: left; width: 112px; height: 112px; }
+#Y3  { float: left; width: 112px; height: 112px; }
+#K5  { float: left; width: 112px; height: 112px; }
+#K7  { float: left; width: 112px; height: 112px; }
+#K8  { float: left; width: 112px; height: 112px; }
+#L05 { float: left; width: 112px; height: 336px; }
+#Y7  { float: left; width: 112px; height: 112px; }
+#Y4  { float: left; width: 112px; height: 112px; }
+#Y1  { float: left; width: 112px; height: 112px; }
+#L01 { float: left; width: 112px; height: 336px; }
+#K2  { float: left; width: 112px; height: 112px; }
+#K4  { float: left; width: 112px; height: 112px; }
+#K6  { float: left; width: 112px; height: 112px; }
+#L08 { float: left; width: 112px; height: 336px; }
+#Y5  { float: left; width: 112px; height: 112px; }
+#Y2  { float: left; width: 112px; height: 112px; }
+#Y0  { float: left; width: 112px; height: 112px; }
+#K0  { float: left; width: 112px; height: 112px; }
+#K1  { float: left; width: 112px; height: 112px; }
+#K3  { float: left; width: 112px; height: 112px; }
+#W   { float: left; width: 112px; height: 112px; }
+#L04 { float: left; width: 336px; height: 112px; }
+#X   { float: left; width: 112px; height: 112px; }
+#L02 { float: left; width: 336px; height: 112px; }
+#E   { float: left; width: 112px; height: 112px; }
+#R3  { float: left; width: 112px; height: 112px; }
+#R1  { float: left; width: 112px; height: 112px; }
+#R0  { float: left; width: 112px; height: 112px; }
+#A0  { float: left; width: 112px; height: 112px; }
+#A2  { float: left; width: 112px; height: 112px; }
+#A5  { float: left; width: 112px; height: 112px; }
+#L12 { float: left; width: 112px; height: 336px; }
+#R6  { float: left; width: 112px; height: 112px; }
+#R4  { float: left; width: 112px; height: 112px; }
+#R2  { float: left; width: 112px; height: 112px; }
+#L03 { float: left; width: 112px; height: 336px; }
+#A1  { float: left; width: 112px; height: 112px; }
+#A4  { float: left; width: 112px; height: 112px; }
+#A7  { float: left; width: 112px; height: 112px; }
+#L09 { float: left; width: 112px; height: 336px; }
+#R8  { float: left; width: 112px; height: 112px; }
+#R7  { float: left; width: 112px; height: 112px; }
+#R5  { float: left; width: 112px; height: 112px; }
+#A3  { float: left; width: 112px; height: 112px; }
+#A6  { float: left; width: 112px; height: 112px; }
+#A8  { float: left; width: 112px; height: 112px; }
+#RQ  { float: left; width: 112px; height: 112px; }
+#L11 { float: left; width: 336px; height: 112px; }
+#S   { float: left; width: 112px; height: 112px; }
+#L10 { float: left; width: 336px; height: 112px; }
+#AQ  { float: left; width: 112px; height: 112px; }
+#RU  { float: left; width: 112px; height: 504px; }
+#AU  { float: left; width: 112px; height: 504px; }
+
+
